@@ -85,5 +85,5 @@ app.get('/api/health', (req, res) => {
 // Export the Express app as a serverless function
 // Vercel will automatically handle this as a serverless function
 
-export default app;
+module.exports = app;
 
