@@ -11,7 +11,7 @@ dotenv.config();
 
 // Import database connection (will connect when function is invoked)
 try {
-  require('../backend/config/database');
+  require('../config/database');
 } catch (error) {
   console.error('Database connection error:', error.message);
 }
@@ -62,18 +62,19 @@ try {
 }
 
 // Routes
-app.use('/api/auth', require('../backend/routes/auth'));
-app.use('/api/users', require('../backend/routes/users'));
-app.use('/api/announcements', require('../backend/routes/announcements'));
-app.use('/api/team', require('../backend/routes/team'));
-app.use('/api/events', require('../backend/routes/events'));
-app.use('/api/admin', require('../backend/routes/admin'));
-app.use('/api/upload', require('../backend/routes/upload'));
-app.use('/api/resources', require('../backend/routes/resources'));
-app.use('/api/code', require('../backend/routes/code'));
-app.use('/api/aptitude', require('../backend/routes/aptitude'));
-app.use('/api/concept', require('../backend/routes/concept'));
-app.use('/api', require('../backend/routes/contact'));
+app.use('/api/auth', require('../routes/auth'));
+app.use('/api/users', require('../routes/users'));
+app.use('/api/announcements', require('../routes/announcements'));
+app.use('/api/team', require('../routes/team'));
+app.use('/api/events', require('../routes/events'));
+app.use('/api/admin', require('../routes/admin'));
+app.use('/api/upload', require('../routes/upload'));
+app.use('/api/resources', require('../routes/resources'));
+app.use('/api/code', require('../routes/code'));
+app.use('/api/aptitude', require('../routes/aptitude'));
+app.use('/api/concept', require('../routes/concept'));
+app.use('/api', require('../routes/contact'));
+
 
 // Health check
 app.get('/api/health', (req, res) => {
